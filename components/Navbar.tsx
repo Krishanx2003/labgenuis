@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { NavLinks } from "@/constant";
 
-import Button from "./Button";
+
 
 const Navbar = () => {
   return (
@@ -32,3 +32,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

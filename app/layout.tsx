@@ -1,6 +1,7 @@
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata = {
   title: "Flexibble",
@@ -12,9 +13,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <body>
        <Navbar />
+       <ThemeProvider
+          attribute="class"
+          defaultTheme="system">
         <main>
           {children}
         </main>
+        </ThemeProvider>
        <Footer />
       </body>
     </html>

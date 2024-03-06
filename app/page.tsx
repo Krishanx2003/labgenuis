@@ -1,4 +1,6 @@
 import Categories from '@/components/Categories'
+
+
 import React from 'react'
 
 const Home = () => {
@@ -9,6 +11,8 @@ const Home = () => {
 
         <p className="no-result-text text-center">No projects found, go create some first.</p>
       </section>
+
+      
  </>
   )
 }
