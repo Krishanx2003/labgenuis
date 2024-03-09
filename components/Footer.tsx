@@ -1,58 +1,143 @@
-import Image from "next/image";
-import Link from "next/link";
+import Link from 'next/link'
+import React from 'react'
+import { Button } from './ui/button'
 
-import { footerLinks } from "@/constant";
-
-type ColumnProps = {
-    title: string;
-    links: Array<string>;
-};
-
-const FooterColumn = ({ title, links }: ColumnProps) => (
-    <div className="footer_column">
-        <h4 className="font-semibold">{title}</h4>
-        <ul className="flex flex-col gap-2 font-normal">
-            {links.map((link) => <Link href="/" key={link}>{link}</Link>)}
-        </ul>
-    </div>
-);
-
-const Footer = () => (
-    <section className="flexStart footer">
-        <div className="flex flex-col gap-12 w-full">
-            <div className="flex items-start flex-col">
-                <Image src="/logo-purple.svg" width={116} height={38} alt="logo" />
-
-                <p className="text-start text-sm font-normal mt-5 max-w-xs">
-                    Flexibble is the world&apos;s leading community for creatives to share, grow, and get hired.
-                </p>
-            </div>
-            <div className="flex flex-wrap gap-12">
-                <FooterColumn title={footerLinks[0].title} links={footerLinks[0].links} />
-
-                <div className="flex-1 flex flex-col gap-4">
-                    <FooterColumn title={footerLinks[1].title} links={footerLinks[1].links} />
-                    <FooterColumn title={footerLinks[2].title} links={footerLinks[2].links} />
-                </div>
-
-                <FooterColumn title={footerLinks[3].title} links={footerLinks[3].links} />
-
-                <div className="flex-1 flex flex-col gap-4">
-                    <FooterColumn title={footerLinks[4].title} links={footerLinks[4].links} />
-                    <FooterColumn title={footerLinks[5].title} links={footerLinks[5].links} />
-                </div>
-                
-                <FooterColumn title={footerLinks[6].title} links={footerLinks[6].links} />
-            </div>
+export default function Footer() {
+  return (
+    <div className="bg-black text-white">
+    <header className="py-10 px-8 md:px-20">
+      <div className="flex justify-between items-center">
+        <h1 className="text-4xl font-bold">Lab Genius</h1>
+        <Button className="bg-white text-black">View careers</Button>
+      </div>
+    </header>
+    <main className="py-20 px-8 md:px-20">
+      <h2 className="text-6xl font-bold leading-tight mb-12">Connect with fellow enthusiasts, share ideas, and collaborate on groundbreaking projects.</h2>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <h3 className="font-semibold text-xl mb-4">Research</h3>
+          <ul>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Overview
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Index
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                GPT-4
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                DALL·E 3
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Sora
+              </Link>
+            </li>
+          </ul>
         </div>
-
-        <div className="flexBetween footer_copyright">
-            <p>@ 2023 Flexibble. All rights reserved</p>
-            <p className="text-gray">
-                <span className="text-black font-semibold">10,214</span> projects submitted
-            </p>
+        <div>
+          <h3 className="font-semibold text-xl mb-4">API</h3>
+          <ul>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Overview
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Pricing
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Docs
+              </Link>
+            </li>
+          </ul>
         </div>
-    </section>
-);
+        <div>
+          <h3 className="font-semibold text-xl mb-4">ChatGPT</h3>
+          <ul>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Overview
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Team
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Enterprise
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Pricing
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Try ChatGPT
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-semibold text-xl mb-4">Company</h3>
+          <ul>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                About
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Blog
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Careers
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Charter
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Security
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Customer stories
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link className="hover:underline" href="#">
+                Safety
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+)
+}
 
-export default Footer;
+

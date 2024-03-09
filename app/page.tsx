@@ -1,22 +1,26 @@
-import Categories from '@/components/Categories'
-
-
-import React from 'react'
+import React from 'react';
+import Categories from '@/components/Categories';
+import Collab from '@/components/Collab';
+import Feature from '@/components/Feature';
+import Hero from '@/components/Hero';
+import { Support } from '@/components/Support';
 
 const Home = () => {
   return (
-   <>
-   <section className="flexStart flex-col paddings">
+    <main className="relative">
+      {/* <section className="flexStart flex-col paddings">
         <Categories />
+      </section> */}
 
-        <p className="no-result-text text-center">No projects found, go create some first.</p>
-      </section>
+      <div className="mx-4 md:mx-[3.25rem] pt-32 lg:pt-16">
+        <Hero />
+        <Collab />
+      </div>
 
-      
- </>
-  )
-}
+      <Support />
+      <Feature />
+    </main>
+  );
+};
 
-export default Home
-
-
+export default Home;
