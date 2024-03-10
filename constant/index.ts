@@ -1,5 +1,5 @@
 export const NavLinks = [
-  { href: '/', key: 'Inspiration', text: 'Browse' },
+  { href: '/', key: 'Blog', text: 'Blog' },
   { href: '/', key: 'Find Projects', text: 'Find Projects' },
   { href: '/', key: 'Learn Development', text: 'About Us' },
   { href: '/', key: 'Career Advancement', text: 'Community' },
@@ -22,3 +22,9 @@ export const categoryFilters = [
   "Chatbots"
 ]
 
+// git init
+// git add README.md
+// git commit -m "first commit"
+// git branch -M main
+// git remote add origin https://github.com/Krishanx2003/labgenuis.git
+// git push -u origin main

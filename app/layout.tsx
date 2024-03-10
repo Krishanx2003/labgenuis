@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata = {
-  title: "Flexibble",
+  title: "OpenMind",
   description: "Showcase and discover remarkable developer projects",
 };
 
