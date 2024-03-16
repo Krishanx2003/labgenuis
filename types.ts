@@ -7,6 +7,7 @@ type Base = {
 };
 
 export interface Post extends Base {
+  datetime: ReactI18NextChildren | Iterable<ReactI18NextChildren>;
   author: Author;
   body: Block[];
   categories: Category[];
@@ -17,6 +18,7 @@ export interface Post extends Base {
 }
 
 interface Author extends Base {
+  datetime: ReactI18NextChildren | Iterable<ReactI18NextChildren>;
   description: string;
   image: Image;
   name: string;

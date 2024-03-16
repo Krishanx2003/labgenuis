@@ -1,37 +1,36 @@
-"use client";
-
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { categoryFilters } from "@/constant";
+import { useState, useEffect } from 'react';
+import { groq } from 'next-sanity';
+import { client } from '@/lib/createClient';
+import Link from 'next/link';
 
 const Categories = () => {
-  const router = useRouter();
-  const pathName = usePathname();
-  const searchParams = useSearchParams() ?? new URLSearchParams();
+  const [categories, setCategories] = useState([]);
 
-  const category = searchParams.get("category");
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const data = await client.fetch(groq`
+          *[_type == 'category'] {
+            _id,
+            title,
+            'slug': slug.current
+          }
+        `);
+        setCategories(data);
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+      }
+    };
 
-  const handleTags = (item: string) => {
-    router.push(`${pathName}?category=${item}`);
-  };
+    fetchCategories();
+  }, []);
 
   return (
-    <div className="flexBetween w-full gap-5 flex-wrap">
-      <ul className="flex gap-2 overflow-auto">
-        {categoryFilters.map((filter) => (
-          <button
-            key={filter}
-            type="button"
-            onClick={() => handleTags(filter)}
-            className={`${
-              category === filter
-                ? "bg-light-white-300 font-medium"
-                : "font-normal"
-            } px-4 py-3 rounded-lg capitalize whitespace-nowrap`}
-          >
-            {filter}
-          </button>
-        ))}
-      </ul>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {categories.map((category) => (
+        <Link key={category._id} href={`/blog?category=${encodeURIComponent(category.slug)}`} className="text-gray-400 hover:text-gray-600">{category.title}
+        </Link>
+      ))}
     </div>
   );
 };

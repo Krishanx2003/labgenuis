@@ -1,18 +1,11 @@
 import { groq } from "next-sanity";
-import { Post } from "../../../../types"
+import { Post } from "../../../../types";
 import { client, urlFor } from "@/lib/createClient";
-import Container from "@/components/Container";
 import Image from "next/image";
-import {
-  FaFacebookF,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaYoutube,
-} from "react-icons/fa";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
-import { RichText } from "@/components/RichText";
+import { Button } from "@/components/ui/button";
+
 
 interface Props {
   params: {
@@ -42,78 +35,38 @@ const SlugPage = async ({ params: { slug } }: Props) => {
   const post: Post = await client.fetch(query, { slug });
 
   return (
-    <Container className="mb-10">
-      <div className="flex items-center mb-10">
-        <div className="w-full md:w-2/3">
-          {post?.mainImage && (
-          <Image
-            src={urlFor(post?.mainImage).url()}
-            width={500}
-            height={500}
-            alt="main image"
-            className="object-cover w-full"
-          />
-          )}
-        </div>
-        <div className="w-1/3 hidden md:inline-flex flex-col items-center gap-5 px-4">
-          {post?.author && (
-          <Image
-            src={urlFor(post?.author?.image).url()}
-            width={200}
-            height={200}
-            alt="author image"
-            className="w-32 h-32 rounded-full object-cover"
-          />
-          )}
-          <p className="text-3xl text-[#5442ae] font-semibold">
-            {post?.author?.name}
-          </p>
-          <p className="text-center tracking-wide text-sm">
-            {post?.author?.description}
-          </p>
-          <div className="flex items-center gap-3">
-            <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
-              className="w-10 h-10 bg-red-600 text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
-            >
-              <FaYoutube />
-            </Link>
-            <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
-              className="w-10 h-10 bg-gray-500 text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
-            >
-              <FaGithub />
-            </Link>
-            <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
-              className="w-10 h-10 bg-[#3e5b98] text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
-            >
-              <FaFacebookF />
-            </Link>
-            <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
-              className="w-10 h-10 bg-[#bc1888] text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
-            >
-              <FaInstagram />
-            </Link>
-            <Link
-              href={"https://www.youtube.com/channel/UChkOsij0dhgft0GhHRauOAA"}
-              target="blank"
-              className="w-10 h-10 bg-blue-500 text-white text-xl rounded-full flex items-center justify-center hover:bg-[#5442ae] duration-200"
-            >
-              <FaLinkedin />
-            </Link>
+ 
+      <div className="max-w-4xl mx-auto p-8">
+       
+            <h1 className="text-5xl font-bold mb-4 text-green-600">
+              {post?.title}
+            </h1>
+            <p className="text-2xl font-semibold  text-gray-700">{post?.description}</p>
+            {post?.mainImage && (
+              <Image
+                src={urlFor(post?.mainImage).url()}
+                alt="Main Image"
+                className="mt-6"
+                height="300"
+               
+                style={{
+                  aspectRatio: "600/300",
+                  objectFit: "cover",
+                }}
+                width="600"
+              />
+            )}
+            <PortableText value={post?.body} />
+
+            <div className="flex justify-center mt-8">
+        <Link href="/blog">
+          <Button>Return</Button>
+        </Link>
+      </div>
           </div>
-        </div>
-      </div>
-      <div>
-        <PortableText value={post?.body} components={RichText} />
-      </div>
-    </Container>
+          
+         
+  
   );
 };
 

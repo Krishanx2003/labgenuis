@@ -1,7 +1,8 @@
-import "./globals.css";
+// Import necessary components and modules
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import "../style/globals.css"
 
 export const metadata = {
   title: "OpenMind",
@@ -12,15 +13,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <body>
-       <Navbar />
-       <ThemeProvider
+        <Navbar />
+        <ThemeProvider
           attribute="class"
-          defaultTheme="system">
-        <main>
-          {children}
-        </main>
+          defaultTheme="system"
+        >
+          <main>
+            {children}
+          </main>
         </ThemeProvider>
-       <Footer />
+        <Footer />
       </body>
     </html>
   );

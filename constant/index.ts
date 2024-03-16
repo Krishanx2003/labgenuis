@@ -1,10 +1,11 @@
 export const NavLinks = [
-  { href: '/', key: 'Blog', text: 'Blog' },
-  { href: '/', key: 'Find Projects', text: 'Find Projects' },
-  { href: '/', key: 'Learn Development', text: 'About Us' },
-  { href: '/', key: 'Career Advancement', text: 'Community' },
-  { href: '/', key: 'Hire Developers', text: 'Resources' }
+  { href: '/blog', key: 'Blog', text: 'Blog' },
+  { href: '/project', key: 'Find Projects', text: 'Find Projects' },
+  { href: '/about', key: 'About Us', text: 'About Us' },
+  { href: '/community', key: 'Community', text: 'Community' },
+  { href: '/resources', key: 'Resources', text: 'Resources' }
 ];
+
 
 export const categoryFilters = [
   "Frontend",
