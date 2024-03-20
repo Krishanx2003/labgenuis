@@ -7,6 +7,7 @@ import "../style/globals.css"
 export const metadata = {
   title: "OpenMind",
   description: "Showcase and discover remarkable developer projects",
+  icon: '/public/logo.png'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

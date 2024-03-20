@@ -1,13 +1,21 @@
 import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
     <div className="bg-black text-white">
     <header className="py-10 px-8 md:px-20">
       <div className="flex justify-between items-center">
-        <h1 className="text-4xl font-bold">Lab Genius</h1>
+      <Link href='/'>
+                  <Image
+                    src='/logo.png'
+                    width={136}
+                    height={53}
+                    alt='logo'
+                  />
+                </Link>
         <Button className="bg-white text-black">View careers</Button>
       </div>
     </header>

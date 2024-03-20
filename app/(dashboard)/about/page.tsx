@@ -1,11 +1,9 @@
-"use client"
-import Layout from './layout';
 import React from 'react';
 
 const About = () => {
   return (
- <Layout>
-     <header className="bg-[#f4f4f4] py-10">
+    <div>
+      <header className="bg-[#f4f4f4] py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold leading-tight text-gray-900">About Lightning</h1>
         </div>
@@ -45,9 +43,7 @@ const About = () => {
           </div>
         </div>
       </main>
-   
- 
-    </Layout>
+    </div>
   );
 };
 
