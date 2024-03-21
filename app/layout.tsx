@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import "../style/globals.css"
+import Chat from "@/components/chatbox/Chat";
 
 export const metadata = {
   title: "OpenMind",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           attribute="class"
           defaultTheme="system"
         >
+          <Chat />
           <main>
             {children}
           </main>
