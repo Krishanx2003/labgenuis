@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import "../style/globals.css"
+import Chat from "@/components/chatbox/Chat";
+import Providers from "@/components/chatbox/Providers";
 
 export const metadata = {
   title: "OpenMind",
@@ -13,18 +15,21 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
+      <Providers>
       <body>
         <Navbar />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
         >
+          <Chat />
           <main>
             {children}
           </main>
         </ThemeProvider>
         <Footer />
       </body>
+      </Providers>
     </html>
   );
 }

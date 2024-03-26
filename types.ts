@@ -1,3 +1,5 @@
+type ReactI18NextChildren = string;  
+
 type Base = {
   _createdAt: string;
   _id: string;
