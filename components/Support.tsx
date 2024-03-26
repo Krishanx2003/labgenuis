@@ -64,9 +64,12 @@ export function Support() {
     </div>
   );
 }
-
 // StarIcon component
-function StarIcon(props) {
+interface StarIconProps {
+  [key: string]: any;
+}
+
+function StarIcon(props: StarIconProps) {
   return (
     <svg
       {...props}
@@ -86,7 +89,11 @@ function StarIcon(props) {
 }
 
 // StarHalfIcon component
-function StarHalfIcon(props) {
+interface StarHalfIconProps {
+  [key: string]: any;
+}
+
+function StarHalfIcon(props: StarHalfIconProps) {
   return (
     <svg
       {...props}
@@ -106,7 +113,11 @@ function StarHalfIcon(props) {
 }
 
 // ArrowUpCircleIcon component
-function ArrowUpCircleIcon(props) {
+interface ArrowUpCircleIconProps {
+  [key: string]: any;
+}
+
+function ArrowUpCircleIcon(props: ArrowUpCircleIconProps) {
   return (
     <svg
       {...props}
@@ -128,7 +139,11 @@ function ArrowUpCircleIcon(props) {
 }
 
 // PieChartIcon component
-function PieChartIcon(props) {
+interface PieChartIconProps {
+  [key: string]: any;
+}
+
+function PieChartIcon(props: PieChartIconProps) {
   return (
     <svg
       {...props}
@@ -149,7 +164,11 @@ function PieChartIcon(props) {
 }
 
 // HeartHandshakeIcon component
-function HeartHandshakeIcon(props) {
+interface HeartHandshakeIconProps {
+  [key: string]: any;
+}
+
+function HeartHandshakeIcon(props: HeartHandshakeIconProps) {
   return (
     <svg
       {...props}
