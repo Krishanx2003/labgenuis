@@ -163,7 +163,14 @@ const Project = () => {
 export default Project;
 
 
-function GitBranchIcon(props) {
+
+// Define the type for props
+interface IconProps {
+  className?: string;
+}
+
+// GitBranchIcon component
+function GitBranchIcon(props: IconProps) {
   return (
     <svg
       {...props}
@@ -184,7 +191,9 @@ function GitBranchIcon(props) {
     </svg>
   )
 }
-function CloudLightningIcon(props) {
+
+// CloudLightningIcon component
+function CloudLightningIcon(props: IconProps) {
   return (
     <svg
       {...props}
@@ -204,8 +213,8 @@ function CloudLightningIcon(props) {
   )
 }
 
-
-function StarIcon(props) {
+// StarIcon component
+function StarIcon(props: IconProps) {
   return (
     <svg
       {...props}
@@ -224,8 +233,8 @@ function StarIcon(props) {
   )
 }
 
-
-function SearchIcon(props) {
+// SearchIcon component
+function SearchIcon(props: IconProps) {
   return (
     <svg
       {...props}
@@ -245,8 +254,8 @@ function SearchIcon(props) {
   )
 }
 
-
-function EyeIcon(props) {
+// EyeIcon component
+function EyeIcon(props: IconProps) {
   return (
     <svg
       {...props}
@@ -266,8 +275,8 @@ function EyeIcon(props) {
   )
 }
 
-
-function GitForkIcon(props) {
+// GitForkIcon component
+function GitForkIcon(props: IconProps) {
   return (
     <svg
       {...props}
@@ -289,3 +298,4 @@ function GitForkIcon(props) {
     </svg>
   )
 }
+
