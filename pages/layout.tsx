@@ -1,37 +1,26 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Head from 'next/head';
-import "../style/globals.css"
-
+import "../style/globals.css"; // Assuming this file contains your global styles
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ThemeProvider } from 'next-themes';
+import Header from '@/components/nav/Header';
 
-interface LayoutProps {
-  title?: string;
-  children: React.ReactNode;
-}
-
-const Layout: React.FC<LayoutProps> = ({ title, children }) => {
+const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <div>
+    <>
       <Head>
-        <title>{title ? `${title} | Openmind` : 'openmind'}</title>
-        <meta name="description" content="Your website description" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
       </Head>
-      <Navbar />
-      <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-        >
-          <main>
-            {children}
-          </main>
-        </ThemeProvider>
+      <Header />
+      <ThemeProvider attribute="class" defaultTheme="system">
+        <main>
+          {children}
+        </main>
+      </ThemeProvider>
       <Footer />
-    </div>
+    </>
   );
 };
 
 export default Layout;
-
