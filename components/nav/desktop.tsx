@@ -78,24 +78,22 @@ export function NavMenu() {
                                 Projects
                               </div>
                               <p className="text-sm leading-tight text-muted-foreground">
-                                 Beautifully designed components built with
-                                 Radix UI and Tailwind CSS.
+                              Discover different projects related to data science, artificial intelligence, machine learning, OpenAI, large language models (LLMs), and more.
                               </p>
                            </Link>
                         </NavigationMenuLink>
                      </li>
-                     <ListItem href="/docs" title="Introduction">
-                        Re-usable components built using Radix UI and Tailwind
-                        CSS.
+                     <ListItem href="/project" title="Data Science">
+                     Learn Python For Data Science by Doing Several Projects
                      </ListItem>
-                     <ListItem href="/" title="Installation">
-                        How to install dependencies and structure your app.
+                     <ListItem href="/project" title="Machine Learning">
+                     Write Linear Regression From Scratch in Python
                      </ListItem>
                      <ListItem
                         href="y"
-                        title="Typography"
+                        title="OpenCV"
                      >
-                        Styles for headings, paragraphs, lists...etc
+                        Build A Face Detector using OpenCV and Deep Learning
                      </ListItem>
                   </ul>
                </NavigationMenuContent>
