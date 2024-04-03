@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section className="pt-24">
       <div className="mx-auto max-w-screen-xl px-4 py-8 text-center lg:py-12">
-        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-zinc-100 md:text-5xl lg:text-7xl">
+      <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
         Harness the Power of AI, ML, and Data Science with AIHubPro
         </h1>
         <p className="text-zinc-500 sm:px-16 lg:px-48">
@@ -27,7 +27,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Visit shadcn/ui
+              Visit Projects
             </a>
           </Button>
         </div>

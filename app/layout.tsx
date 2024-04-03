@@ -22,10 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <Providers>
       <body className={inter.className}>
         <Header />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Chat />
           <main>
             {children}

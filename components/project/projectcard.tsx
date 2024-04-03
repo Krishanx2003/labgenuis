@@ -11,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { IProject } from '../../types'
+import { IProject } from '../../types/sanity'
 
 export default function ProjectCard({ project }: { project: IProject }) {
   return (

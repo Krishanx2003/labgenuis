@@ -1,14 +1,15 @@
-import type { IProject } from "../types"
+// Define the type IProject
+export interface IProject {
+  title: string;
+  description: string;
+  authorGithub: string;
+  projectRepo: string;
+  projectLink: string;
+ 
+
+}
 
 export const projects: IProject[] = [
-  {
-    title: "shadcn/ui",
-    description:
-      "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
-    authorGithub: "https://github.com/shadcn-ui",
-    projectRepo: "https://github.com/shadcn-ui/ui",
-    projectLink: "https://ui.shadcn.com/",
-  },
   {
     title: "shadverse",
     description:

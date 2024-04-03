@@ -5,9 +5,11 @@ import { MobileNav } from '@/components/nav/mobile'
 import { MainNav } from '@/components/nav/desktop'
 import { Button } from '@/components/ui/button'
 
-import { LogInIcon, MoonIcon, SunIcon } from 'lucide-react'
+
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
+import { LogInIcon } from 'lucide-react'
+import { ModeToggle } from './toggle'
 
 export default function Header() {
   
@@ -22,7 +24,7 @@ export default function Header() {
                   <CommandMenu />
                </div>
                
-               <ThemeToggle />
+              <ModeToggle/>
                
             </div>
          </div>
@@ -43,20 +45,3 @@ function LoginDialog() {
    )
 }
 
-function ThemeToggle() {
-   const { resolvedTheme, setTheme } = useTheme()
-
-   return (
-      <Button
-         variant="outline"
-         size="icon"
-         onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-      >
-         {resolvedTheme === 'dark' ? (
-            <SunIcon className="h-4" />
-         ) : (
-            <MoonIcon className="h-4" />
-         )}
-      </Button>
-   )
-}

@@ -6,6 +6,10 @@ export const NavLinks = [
   { href: '/resources', key: 'Resources', text: 'Resources' }
 ];
 
+export const SubLinks = [
+  { href: '/project/create', key: 'Create Project', text: 'Create Project' }
+]
+
 
 export const categoryFilters = [
   "Frontend",
@@ -23,9 +27,9 @@ export const categoryFilters = [
   "Chatbots"
 ]
 
-// git init
-// git add README.md
-// git commit -m "first commit"
-// git branch -M main
-// git remote add origin https://github.com/Krishanx2003/labgenuis.git
-// git push -u origin main
+export const projectDefaultValues = {
+  title: '',
+  description: '',
+  categoryId: '',
+  url: '',
+}

@@ -4,12 +4,11 @@ import Categories from '@/components/Categories';
 import Collab from '@/components/Collab';
 import Feature from '@/components/Feature';
 import Hero from '@/components/Hero';
-
 import BlogContent from '@/components/BlogContent';
 import { client } from "@/lib/createClient";
 import { groq } from "next-sanity";
 import { Separator } from '@/components/ui/home-separator';
-import ProjectCard from '@/components/projectcard/projectcard';
+import ProjectCard from '@/components/project/projectcard';
 import { projects } from '@/data/projects';
 
 const revalidate = 30;
@@ -38,7 +37,7 @@ const Home = () => {
   const limitedPosts = posts.slice(0, 3); // Slice the array to show only the first three posts
   const limitedProjects = projects.slice(0, 4);
   return (
-    <main className="relative">
+    <main className="relative bg-[#121212]  text-white">
       <div className="mx-4 md:mx-[3.25rem] pt-32 lg:pt-16">
         <Hero />
         <Collab />
