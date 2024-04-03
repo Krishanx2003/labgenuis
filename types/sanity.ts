@@ -1,3 +1,4 @@
+
 type ReactI18NextChildren = string;  
 
 type Base = {
@@ -60,4 +61,12 @@ interface Span {
 interface Category extends Base {
   description: string;
   title: string;
+}
+
+export interface IProject {
+  title: string;
+  description: string;
+  authorGithub: string;
+  projectRepo: string;
+  projectLink?: string;
 }

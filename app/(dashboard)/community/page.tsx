@@ -1,9 +1,10 @@
 import React from 'react'
-import Layout from './layout'
+
 import { Button } from "@/components/ui/button"
 import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/card"
+import Layout from '@/app/layout'
 
-const community = () => {
+const Community = () => {
   return (
     <Layout>
    <div className="bg-[#121212] min-h-screen text-white">
@@ -105,4 +106,5 @@ const community = () => {
   )
 }
 
-export default community
+export default Community
+
