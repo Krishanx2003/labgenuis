@@ -20,7 +20,7 @@ const Card = ({ project }: CardProps) => {
   }
 
   return (
-    <div className="h-[40rem] w-full flex items-center justify-center">
+    <div className="h-[20rem] w-full flex items-center justify-center">
        <PinContainer
         title={project.url}
         href={project.url}

@@ -95,7 +95,7 @@ const ProjectForm = ({ userId, type, project, projectId }: ProjectFormProps) => 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-5">
-        <div className="flex flex-col gap-5 md:flex-row">
+        <div className="flex h-[450px] shrink-0 items-center justify-center rounded-md border border-dashed">
           <FormField
             control={form.control}
             name="title"
@@ -161,12 +161,10 @@ const ProjectForm = ({ userId, type, project, projectId }: ProjectFormProps) => 
                 <FormItem className="w-full">
                   <FormControl>
                     <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
-                      <Image
-                        src="/assets/icons/link.svg"
-                        alt="link"
-                        width={24}
-                        height={24}
-                      />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+</svg>
+
 
                       <Input placeholder="URL" {...field} className="input-field" />
                     </div>

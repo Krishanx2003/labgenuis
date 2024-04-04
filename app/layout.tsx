@@ -1,12 +1,13 @@
 // Import necessary components and modules
 "use client"
-import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import "../style/globals.css"
+import "../styles/globals.css"
 import Chat from "@/components/chatbox/Chat";
 import Providers from "@/components/chatbox/Providers";
 import Header from "@/components/nav/Header";
 import { Inter } from 'next/font/google';
+import { cn } from "@/lib/utils";
+import { fontSans } from "@/lib/fonts"
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,7 +21,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <Providers>
-      <body className={inter.className}>
+      <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable
+          )}
+        >
         <Header />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Chat />
@@ -28,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
         </ThemeProvider>
-        <Footer />
+    
       </body>
       </Providers>
     </html>
