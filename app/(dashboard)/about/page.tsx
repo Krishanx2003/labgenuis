@@ -1,155 +1,115 @@
-import { Metadata } from "next"
-import Image from "next/image"
-import { PlusCircledIcon } from "@radix-ui/react-icons"
+import React from "react";
+import { TracingBeam } from "../../../components/ui/tracing-beam"; // Import TracingBeam component
 
-import { Button } from "../../../components/ui/button"
-import { ScrollArea, ScrollBar } from "../../../components/ui/scroll-area"
-import { Separator } from "../../../components/ui/separator"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "../../../components/ui/tabs"
-
-import { AlbumArtwork } from "../about/components/album-artwork"
-import { PodcastEmptyPlaceholder } from "../about/components/podcast-empty-placeholder"
-import { Sidebar } from "../about/components/sidebar"
-import { listenNowAlbums, madeForYouAlbums } from "./data/albums"
-import { workflows } from "./data/workflows"
-
-export const metadata: Metadata = {
-  title: "Music App",
-  description: "Example music app using the components.",
-}
+import Image from "next/image";
 
 export default function About() {
   return (
-    <>
-      <div className="md:hidden">
-        <Image
-          src="/examples/music-light.png"
-          width={1280}
-          height={1114}
-          alt="Music"
-          className="block dark:hidden"
-        />
-        <Image
-          src="/examples/music-dark.png"
-          width={1280}
-          height={1114}
-          alt="Music"
-          className="hidden dark:block"
-        />
-      </div>
+    <TracingBeam className="px-6">
+      <div className="max-w-2xl mx-auto antialiased pt-4 relative">
+        {about.map((item, index) => (
+          <div key={`content-${index}`} className="mb-10">
+            <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
+              {item.badge}
+            </h2>
 
-        <div className="border-t">
-          <div className="bg-background">
-            <div className="grid lg:grid-cols-5">
-              <Sidebar workflows={workflows} className="hidden lg:block" />
-              <div className="col-span-3 lg:col-span-4 lg:border-l">
-                <div className="h-full px-4 py-6 lg:px-8">
-                  <Tabs defaultValue="music" className="h-full space-y-6">
-                    <div className="space-between flex items-center">
-                      <TabsList>
-                        <TabsTrigger value="music" className="relative">
-                          Model
-                        </TabsTrigger>
-                        <TabsTrigger value="podcasts">Create</TabsTrigger>
-                        <TabsTrigger value="live" disabled>
-                          Live
-                        </TabsTrigger>
-                      </TabsList>
-                      <div className="ml-auto mr-4">
-                        <Button>
-                          <PlusCircledIcon className="mr-2 h-4 w-4" />
-                          Add Model
-                        </Button>
-                      </div>
-                    </div>
-                    <TabsContent
-                      value="music"
-                      className="border-none p-0 outline-none"
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="space-y-1">
-                          <h2 className="text-2xl font-semibold tracking-tight">
-                            Listen Now
-                          </h2>
-                          <p className="text-sm text-muted-foreground">
-                            Top picks for you. Updated daily.
-                          </p>
-                        </div>
-                      </div>
-                      <Separator className="my-4" />
-                      <div className="relative">
-                        <ScrollArea>
-                          <div className="flex space-x-4 pb-4">
-                            {listenNowAlbums.map((album) => (
-                              <AlbumArtwork
-                                key={album.name}
-                                album={album}
-                                className="w-[250px]"
-                                aspectRatio="portrait"
-                                width={250}
-                                height={330}
-                              />
-                            ))}
-                          </div>
-                          <ScrollBar orientation="horizontal" />
-                        </ScrollArea>
-                      </div>
-                      <div className="mt-6 space-y-1">
-                        <h2 className="text-2xl font-semibold tracking-tight">
-                          Made for You
-                        </h2>
-                        <p className="text-sm text-muted-foreground">
-                          Your personal playlists. Updated daily.
-                        </p>
-                      </div>
-                      <Separator className="my-4" />
-                      <div className="relative">
-                        <ScrollArea>
-                          <div className="flex space-x-4 pb-4">
-                            {madeForYouAlbums.map((album) => (
-                              <AlbumArtwork
-                                key={album.name}
-                                album={album}
-                                className="w-[150px]"
-                                aspectRatio="square"
-                                width={150}
-                                height={150}
-                              />
-                            ))}
-                          </div>
-                          <ScrollBar orientation="horizontal" />
-                        </ScrollArea>
-                      </div>
-                    </TabsContent>
-                    <TabsContent
-                      value="podcasts"
-                      className="h-full flex-col border-none p-0 data-[state=active]:flex"
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="space-y-1">
-                          <h2 className="text-2xl font-semibold tracking-tight">
-                            New Episodes
-                          </h2>
-                          <p className="text-sm text-muted-foreground">
-                            Your favorite podcasts. Updated daily.
-                          </p>
-                        </div>
-                      </div>
-                      <Separator className="my-4" />
-                      <PodcastEmptyPlaceholder />
-                    </TabsContent>
-                  </Tabs>
-                </div>
-              </div>
+            <p className= "text-xl mb-4">
+              {item.title}
+            </p>
+
+            <div className="text-sm  prose prose-sm dark:prose-invert">
+              {item?.image && (
+                <Image
+                  src={item.image}
+                  alt="blog thumbnail"
+                  height="1000"
+                  width="1000"
+                  className="rounded-lg mb-10 object-cover"
+                />
+              )}
+              {item.description}
             </div>
           </div>
-        </div>
-     
-    </>
-  )
+        ))}
+      </div>
+    </TracingBeam>
+  );
 }
+
+const about = [
+  {
+    title: "Lorem Ipsum Dolor Sit Amet",
+    description: (
+      <>
+        <p>
+          Sit duis est minim proident non nisi velit non consectetur. Esse
+          adipisicing laboris consectetur enim ipsum reprehenderit eu deserunt
+          Lorem ut aliqua anim do. Duis cupidatat qui irure cupidatat incididunt
+          incididunt enim magna id est qui sunt fugiat. Laboris do duis pariatur
+          fugiat Lorem aute sit ullamco. Qui deserunt non reprehenderit dolore
+          nisi velit exercitation Lorem qui do enim culpa. Aliqua eiusmod in
+          occaecat reprehenderit laborum nostrud fugiat voluptate do Lorem culpa
+          officia sint labore. Tempor consectetur excepteur ut fugiat veniam
+          commodo et labore dolore commodo pariatur.
+        </p>
+        <p>
+          Dolor minim irure ut Lorem proident. Ipsum do pariatur est ad ad
+          veniam in commodo id reprehenderit adipisicing. Proident duis
+          exercitation ad quis ex cupidatat cupidatat occaecat adipisicing.
+        </p>
+        <p>
+          Tempor quis dolor veniam quis dolor. Sit reprehenderit eiusmod
+          reprehenderit deserunt amet laborum consequat adipisicing officia qui
+          irure id sint adipisicing. Adipisicing fugiat aliqua nulla nostrud.
+          Amet culpa officia aliquip deserunt veniam deserunt officia
+          adipisicing aliquip proident officia sunt.
+        </p>
+      </>
+    ),
+    badge: "React",
+    image:
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Lorem Ipsum Dolor Sit Amet",
+    description: (
+      <>
+        <p>
+          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
+          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
+          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
+          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
+          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
+          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
+        </p>
+        <p>
+          In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse
+          veniam fugiat esse qui sint ad sunt reprehenderit do qui proident
+          reprehenderit. Laborum exercitation aliqua reprehenderit ea sint
+          cillum ut mollit.
+        </p>
+      </>
+    ),
+    badge: "Changelog",
+    image:
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Lorem Ipsum Dolor Sit Amet",
+    description: (
+      <>
+        <p>
+          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
+          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
+          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
+          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
+          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
+          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
+        </p>
+      </>
+    ),
+    badge: "Launch Week",
+    image:
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];

@@ -6,10 +6,12 @@ export default authMiddleware({
     '/projects/:id',
     '/api/webhook/clerk',
     '/api/uploadthing'
+   
   ],
   ignoredRoutes: [
     '/api/webhook/clerk',
     '/api/uploadthing'
+    
   ]
 });
  

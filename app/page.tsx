@@ -10,6 +10,7 @@ import { groq } from "next-sanity";
 import { Separator } from '@/components/ui/home-separator';
 import ProjectCard from '@/components/project/projectcard';
 import { projects } from '@/data/projects';
+import { MovingCards } from '@/components/MovingCards';
 
 const revalidate = 30;
 const query = groq`*[_type == 'post']{
@@ -37,7 +38,7 @@ const Home = () => {
   const limitedPosts = posts.slice(0, 3); // Slice the array to show only the first three posts
   const limitedProjects = projects.slice(0, 4);
   return (
-    <main className="relative bg-[#121212]  text-white">
+    <main className="container relative ">
       <div className="mx-4 md:mx-[3.25rem] pt-32 lg:pt-16">
         <Hero />
         <Collab />
@@ -51,6 +52,8 @@ const Home = () => {
       <Feature />
       <Separator my-8 />
       <BlogContent posts={posts.slice(0, 3)} />
+      <Separator my-8 />
+      <MovingCards />
     </main>
   );
 };
