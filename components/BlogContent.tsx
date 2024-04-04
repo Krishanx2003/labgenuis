@@ -1,7 +1,7 @@
 // components/BlogContent.tsx
 
 import Link from "next/link";
-import { Post } from '../types';
+import { Post } from '../types/sanity'
 import Image from "next/image";
 import { urlFor } from "@/lib/createClient";
 import { Card } from "./ui/card";
@@ -12,7 +12,7 @@ interface Props {
 
 const BlogContent = ({ posts }: Props) => {
   return (
-    <div className="max-w-7xl mx-auto bg-[#121212]  text-white px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post) => (
           <Card key={post._id} className="w-full">

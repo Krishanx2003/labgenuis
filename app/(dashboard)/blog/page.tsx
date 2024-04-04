@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { groq } from 'next-sanity';
 import { client } from '@/lib/createClient';
-import { Post } from '../../../types'
 import BlogContent from '@/components/BlogContent';
 
 
@@ -31,7 +30,7 @@ const Blog = () => {
 
   return (
  
-      <div className="flex flex-col border-neutral-200 dark:border-neutral-700 bg-[#121212]  text-white">
+      <div className="flex flex-col">
         <main className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-6xl font-bold">Blog</h2>
