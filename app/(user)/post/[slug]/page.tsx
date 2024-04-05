@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { Post } from "../../../../types";
+import { Post } from "../../../../types/sanity";
 import { client, urlFor } from "@/lib/createClient";
 import Image from "next/image";
 import Link from "next/link";

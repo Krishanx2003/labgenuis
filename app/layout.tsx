@@ -27,12 +27,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             fontSans.variable
           )}
         >
-        <Header />
+       
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <div className="relative flex min-h-screen flex-col bg-background">
+        <Header />
           <Chat />
           <main>
             {children}
           </main>
+          </div>
         </ThemeProvider>
     
       </body>
