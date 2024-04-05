@@ -119,6 +119,28 @@ export async function getAllProjects({ query, limit = 6, page, category }: GetAl
   }
 }
 
+// GET PROJECTS BY CREATOR
+export async function getProjectsByUser({ userId, limit = 6, page }: GetProjectsByUserParams) {
+  try {
+    await connectToDatabase()
+
+    const conditions = { creator: userId }
+    const skipAmount = (page - 1) * limit
+
+    const projectsQuery = Project.find(conditions)
+      .sort({ createdAt: 'desc' })
+      .skip(skipAmount)
+      .limit(limit)
+
+    const projects = await populateProject(projectsQuery)
+    const projectsCount = await Project.countDocuments(conditions)
+
+    return { data: JSON.parse(JSON.stringify(projects)), totalPages: Math.ceil(projectsCount / limit) }
+  } catch (error) {
+    handleError(error)
+  }
+}
+
 // GET RELATED projectS: projectS WITH SAME CATEGORY
 export async function getRelatedProjectsByCategory({
   categoryId,
