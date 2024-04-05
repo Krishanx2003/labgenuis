@@ -15,7 +15,6 @@ export default authMiddleware({
     
     '/api/uploadthing',
     '/resource', // Keep this if you want to prevent Clerk authentication for this route
-     
     '/about', // Keep this if you want to prevent Clerk authentication for this route
     '/blog', // Keep this if you want to prevent Clerk authentication for this route
     '/community' // Option 2: Prevent Clerk authentication from running at all for the route

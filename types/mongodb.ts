@@ -65,6 +65,22 @@ export type CreateUserParams = {
     limit?: number;
     page: number | string;
   }
+  export type Project = {
+    _id: string
+    title: string
+    description: string
+    imageUrl: string
+    url: string
+    creator: {
+      _id: string
+      firstName: string
+      lastName: string
+    }
+    category: {
+      _id: string
+      name: string
+    }
+  }
   
   // Category Types
   export type CreateCategoryParams = {

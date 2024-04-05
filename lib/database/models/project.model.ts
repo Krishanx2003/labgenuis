@@ -8,6 +8,8 @@ export interface IProject extends Document {
   imageUrl: string;
   url?: string;
   category: { _id: string, name: string }
+  creator: { _id: string, firstName: string, lastName: string }
+  
 }
 
 const ProjectSchema = new Schema({
@@ -17,6 +19,7 @@ const ProjectSchema = new Schema({
     imageUrl: { type: String, required: true },
     url: { type: String },
     category: { type: Schema.Types.ObjectId, ref: 'Category' },
+    Creator: { type: Schema.Types.ObjectId, ref: 'User' },
   })
   
   const Project = models.Project || model('Project', ProjectSchema);
