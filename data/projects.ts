@@ -18,7 +18,7 @@ export const projects: IProject[] = [
     projectRepo: "https://github.com/lucky-chap/shadverse",
     projectLink: "https://shadverse.vercel.app/",
   },
-  ,
+  
   {
     title: "shadverse",
     description:
@@ -27,7 +27,7 @@ export const projects: IProject[] = [
     projectRepo: "https://github.com/lucky-chap/shadverse",
     projectLink: "https://shadverse.vercel.app/",
   },
-  ,
+  
   {
     title: "shadverse",
     description:
@@ -36,7 +36,7 @@ export const projects: IProject[] = [
     projectRepo: "https://github.com/lucky-chap/shadverse",
     projectLink: "https://shadverse.vercel.app/",
   },
-  ,
+  
   {
     title: "shadverse",
     description:
@@ -45,7 +45,7 @@ export const projects: IProject[] = [
     projectRepo: "https://github.com/lucky-chap/shadverse",
     projectLink: "https://shadverse.vercel.app/",
   },
-  ,
+  
   {
     title: "shadverse",
     description:
@@ -54,7 +54,7 @@ export const projects: IProject[] = [
     projectRepo: "https://github.com/lucky-chap/shadverse",
     projectLink: "https://shadverse.vercel.app/",
   },
-  ,
+  
   {
     title: "shadverse",
     description:
@@ -63,7 +63,7 @@ export const projects: IProject[] = [
     projectRepo: "https://github.com/lucky-chap/shadverse",
     projectLink: "https://shadverse.vercel.app/",
   },
-  ,
+  
   {
     title: "shadverse",
     description:
@@ -72,7 +72,7 @@ export const projects: IProject[] = [
     projectRepo: "https://github.com/lucky-chap/shadverse",
     projectLink: "https://shadverse.vercel.app/",
   },
-  ,
+  
   {
     title: "shadverse",
     description:
@@ -81,7 +81,7 @@ export const projects: IProject[] = [
     projectRepo: "https://github.com/lucky-chap/shadverse",
     projectLink: "https://shadverse.vercel.app/",
   },
-  ,
+  
   {
     title: "shadverse",
     description:
@@ -90,7 +90,7 @@ export const projects: IProject[] = [
     projectRepo: "https://github.com/lucky-chap/shadverse",
     projectLink: "https://shadverse.vercel.app/",
   },
-  ,
+  
   {
     title: "shadverse",
     description:
@@ -99,7 +99,7 @@ export const projects: IProject[] = [
     projectRepo: "https://github.com/lucky-chap/shadverse",
     projectLink: "https://shadverse.vercel.app/",
   },
-  ,
+  
   {
     title: "shadverse",
     description:
