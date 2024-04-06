@@ -76,6 +76,7 @@
     "sanity": "^3.0.0",
     "sonner": "^1.4.32",
     "styled-components": "^6.1.0",
+    "svix": "^1.21.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "5.0.4",
