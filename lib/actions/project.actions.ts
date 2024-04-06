@@ -23,6 +23,7 @@ const getCategoryByName = async (name: string) => {
 
 const populateProject = (query: any) => {
   return query
+  .populate({ path: 'creator', model: User, select: '_id firstName lastName' })
     .populate({ path: 'category', model: Category, select: '_id name' });
 };
 
@@ -61,7 +62,7 @@ export async function updateProject({ userId, project, path }: UpdateProjectPara
     await connectToDatabase()
 
     const projectToUpdate = await Project.findById(project._id)
-    if (!projectToUpdate || projectToUpdate.organizer.toHexString() !== userId) {
+    if (!projectToUpdate || projectToUpdate.creator.toHexString() !== userId) {
       throw new Error('Unauthorized or project not found')
     }
 
