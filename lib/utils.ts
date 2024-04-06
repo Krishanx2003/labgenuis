@@ -10,14 +10,6 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 
-
-
-export enum Theme {
-  DARK = "dark",
-  LIGHT = "light",
-  SYSTEM = "system",
-}
-
 export const convertFileToUrl = (file: File) => URL.createObjectURL(file)
 
 export function formUrlQuery({ params, key, value }: UrlQueryParams) {

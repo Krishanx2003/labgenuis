@@ -23,21 +23,23 @@ const getCategoryByName = async (name: string) => {
 
 const populateProject = (query: any) => {
   return query
-  .populate({ path: 'creator', model: User, select: '_id firstName lastName' })
+  
     .populate({ path: 'category', model: Category, select: '_id name' });
 };
 
 // CREATE
-export async function createProject({ project, path }: CreateProjectParams) {
+export async function createProject({ project, path, userId }: CreateProjectParams) {
   try {
     await connectToDatabase()
+   
 
     const newProject = await Project.create({ ...project, category: project.categoryId })
     revalidatePath(path)
 
     return JSON.parse(JSON.stringify(newProject))
   } catch (error) {
-    handleError(error)
+    console.error(error); // Log the error
+    throw error; // Rethrow the error
   }
 }
 
@@ -61,11 +63,7 @@ export async function updateProject({ userId, project, path }: UpdateProjectPara
   try {
     await connectToDatabase()
 
-    const projectToUpdate = await Project.findById(project._id)
-    if (!projectToUpdate || projectToUpdate.creator.toHexString() !== userId) {
-      throw new Error('Unauthorized or project not found')
-    }
-
+  
     const updatedProject = await Project.findByIdAndUpdate(
       project._id,
       { ...project, category: project.categoryId },
@@ -120,27 +118,27 @@ export async function getAllProjects({ query, limit = 6, page, category }: GetAl
   }
 }
 
-// GET PROJECTS BY CREATOR
-export async function getProjectsByUser({ userId, limit = 6, page }: GetProjectsByUserParams) {
-  try {
-    await connectToDatabase()
+/// GET PROJECTS BY organizer
+// export async function getProjectsByUser({ userId, limit = 6, page }: GetProjectsByUserParams) {
+//   try {
+//     await connectToDatabase()
 
-    const conditions = { creator: userId }
-    const skipAmount = (page - 1) * limit
+//     const conditions = { organizer: userId }
+//     const skipAmount = (page - 1) * limit
 
-    const projectsQuery = Project.find(conditions)
-      .sort({ createdAt: 'desc' })
-      .skip(skipAmount)
-      .limit(limit)
+//     const projectsQuery = Project.find(conditions)
+//       .sort({ createdAt: 'desc' })
+//       .skip(skipAmount)
+//       .limit(limit)
 
-    const projects = await populateProject(projectsQuery)
-    const projectsCount = await Project.countDocuments(conditions)
+//     const projects = await populateProject(projectsQuery)
+//     const projectsCount = await Project.countDocuments(conditions)
 
-    return { data: JSON.parse(JSON.stringify(projects)), totalPages: Math.ceil(projectsCount / limit) }
-  } catch (error) {
-    handleError(error)
-  }
-}
+//     return { data: JSON.parse(JSON.stringify(projects)), totalPages: Math.ceil(projectsCount / limit) }
+//   } catch (error) {
+//     handleError(error)
+//   }
+// }
 
 // GET RELATED projectS: projectS WITH SAME CATEGORY
 export async function getRelatedProjectsByCategory({

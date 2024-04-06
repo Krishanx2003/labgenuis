@@ -4,7 +4,6 @@ import { revalidatePath } from 'next/cache'
 
 import { connectToDatabase } from '@/lib/database'
 import User from '@/lib/database/models/user.model'
-
 import Project from '@/lib/database/models/project.model'
 import { handleError } from '@/lib/utils'
 
@@ -63,7 +62,7 @@ export async function deleteUser(clerkId: string) {
       // Update the 'projects' collection to remove references to the user
       Project.updateMany(
         { _id: { $in: userToDelete.projects } },
-        { $pull: { creator: userToDelete._id } }
+        { $pull: { organizer: userToDelete._id } }
       ),
 
     ])
