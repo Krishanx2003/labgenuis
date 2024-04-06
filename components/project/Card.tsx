@@ -35,8 +35,9 @@ const Card = ({ project }: CardProps) => {
         )}
         </div>
         <p className="p-medium-14 md:p-medium-16 text-grey-600">
-            {project.creator.firstName} {project.creator.lastName}
-          </p>
+    {project.creator?.firstName} {project.creator?.lastName}
+</p>
+
       
       
         <Link href={`/projects/${project._id}`} 
