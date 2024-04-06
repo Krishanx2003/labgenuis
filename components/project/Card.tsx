@@ -14,10 +14,8 @@ const Card = ({ project }: CardProps) => {
   const { sessionClaims } = auth();
   const userId = sessionClaims?.userId as string;
 
-  if (!project) {
-    // Handle the case where project is not available
-    return <div>Error: Project not found</div>;
-  }
+  
+
 
   return (
     <div className="h-[20rem] w-full flex items-center justify-center">
@@ -36,6 +34,10 @@ const Card = ({ project }: CardProps) => {
           </p>
         )}
         </div>
+        <p className="p-medium-14 md:p-medium-16 text-grey-600">
+    {project.creator?.firstName} {project.creator?.lastName}
+</p>
+
       
       
         <Link href={`/projects/${project._id}`} 

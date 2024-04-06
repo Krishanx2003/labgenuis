@@ -2,7 +2,7 @@ import ProjectForm from "@/components/project/ProjectForm";
 
 import { auth } from "@clerk/nextjs";
 
-const CreateEvent = () => {
+const CreateProject = () => {
   const { sessionClaims } = auth();
   const userId = sessionClaims?.userId as string;
 
@@ -19,4 +19,4 @@ const CreateEvent = () => {
   );
 };
 
-export default CreateEvent;
+export default CreateProject;
