@@ -4,7 +4,7 @@ import { authMiddleware } from "@clerk/nextjs";
 export default authMiddleware({
   publicRoutes: [
     '/',
-   
+
     '/projects/:id', // Keep this if you want it to be accessible to both signed-in and signed-out user
     '/api/uploadthing',
     '/api/webhook/clerk',
