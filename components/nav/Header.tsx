@@ -4,11 +4,13 @@ import { MainNav } from '@/components/nav/desktop'
 import { Button } from '@/components/ui/button'
 
 import { useTheme } from 'next-themes'
-import Link from 'next/link'
+
 import { LogInIcon } from 'lucide-react'
 import { ModeToggle } from '../mode-toggle'
 import { SignedIn, UserButton } from '@clerk/nextjs'
 import { SignedOut } from '@clerk/clerk-react'
+import { HoverBorderGradient } from '../ui/hover-border-gradient'
+import Link from 'next/link'
 
 export default function Header() {
   return (
@@ -27,9 +29,13 @@ export default function Header() {
               <UserButton afterSignOutUrl="/" />
             </SignedIn>
             <SignedOut>
-              <Button asChild className="rounded-full" size="lg">
+            <HoverBorderGradient
+containerClassName="rounded-full"
+as="button"
+className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+>
                 <Link href="/sign-in">Login</Link>
-              </Button>
+                </HoverBorderGradient>
             </SignedOut>
           </div>
         </div>
@@ -37,4 +43,5 @@ export default function Header() {
     </header>
   )
 }
+
 
