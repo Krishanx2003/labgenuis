@@ -27,8 +27,8 @@ export const docsConfig: DocsConfig = {
    ],
    sidebarNav: [
       {
-         title: 'Find Projects',
-         href: '/project',
+         title: 'Models',
+         href: '/projects',
       },
       {
          title: 'Blog',

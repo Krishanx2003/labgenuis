@@ -16,6 +16,7 @@ import { IProject } from "@/lib/database/models/project.model";
 import { projectDefaultValues } from "@/constant/index";
 import { projectFormSchema } from "@/lib/validator";
 import * as z from 'zod'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
 type ProjectFormProps = {
   userId: string;
@@ -94,101 +95,104 @@ const ProjectForm = ({ userId, type, project, projectId }: ProjectFormProps) => 
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-5">
-        <div className="flex h-[450px] shrink-0 items-center justify-center rounded-md border border-dashed">
-          <FormField
-            control={form.control}
-            name="title"
-            render={({ field }) => (
-              <FormItem className="w-full">
-                <FormControl>
-                  <Input placeholder="Project title" {...field} className="input-field" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="categoryId"
-            render={({ field }) => (
-              <FormItem className="w-full">
-                <FormControl>
-                  <Dropdown onChangeHandler={field.onChange} value={field.value} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
-
-        <div className="flex flex-col gap-5 md:flex-row">
-          <FormField
+    <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-5">
+    <main className="flex-1 p-10">
+      <div className="max-w-6xl mx-auto">
+        <Card>
+          <CardHeader>
+            <CardTitle>Create Model</CardTitle>
+            <CardDescription>Deploy your new project in one-click.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-10">
+            <FormField
+              control={form.control}
+              name="title"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input placeholder="Project title" {...field} className="input-field" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="categoryId"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Dropdown onChangeHandler={field.onChange} value={field.value} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
               control={form.control}
               name="description"
               render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormControl className="h-72">
+                <FormItem>
+                  <FormControl>
                     <Textarea placeholder="Description" {...field} className="textarea rounded-2xl" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-
-<FormField
+            <FormField
               control={form.control}
               name="imageUrl"
               render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormControl className="h-72">
+                <FormItem>
+                  <FormControl>
+                  <div className="flex flex-col items-center justify-center p-4 border-2 border-dashed border-gray-500 rounded-lg">
                     <FileUploader 
                       onFieldChange={field.onChange}
                       imageUrl={field.value}
                       setFiles={setFiles}
                     />
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-        </div>
-        <div className="flex flex-col gap-5 md:flex-row">
-        <FormField
+            <FormField
               control={form.control}
               name="url"
               render={({ field }) => (
-                <FormItem className="w-full">
+                <FormItem>
                   <FormControl>
-                    <div className="flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-</svg>
-
-
+                    <div className="flex items-center rounded-full  px-4 py-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mr-2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+                      </svg>
                       <Input placeholder="URL" {...field} className="input-field" />
                     </div>
-
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-        </div>
-
-
-        <Button 
-          type="submit"
-          size="lg"
-          disabled={form.formState.isSubmitting}
-          className="button col-span-2 w-full"
-        >
-          {form.formState.isSubmitting ? (
-            'Submitting...'
-          ): `${type} Project `}</Button>
-      </form>
-    </Form>
-  )
-}
+       
+            <Button 
+              type="submit"
+              size="lg"
+              disabled={form.formState.isSubmitting}
+              className="button w-full"
+            >
+              {form.formState.isSubmitting ? (
+                'Submitting...'
+              ): `${type} Project `}
+            </Button>
+          </CardContent>
+          {/* End of max-w-lg container */}
+        </Card>
+      </div>
+      </main>
+    </form>
+  </Form>
+  )}  
 
 export default ProjectForm
