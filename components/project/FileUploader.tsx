@@ -8,6 +8,7 @@ import { generateClientDropzoneAccept } from 'uploadthing/client'
 
 import { Button } from '@/components/ui/button'
 import { convertFileToUrl } from '@/lib/utils'
+import { HoverBorderGradient } from '../ui/hover-border-gradient'
 
 type FileUploaderProps = {
   onFieldChange: (url: string) => void
@@ -44,12 +45,15 @@ export function FileUploader({ imageUrl, onFieldChange, setFiles }: FileUploader
         </div>
       ) : (
         <div className="flex-center flex-col py-5 text-grey-500">
-          <img src="/assets/icons/upload.svg" width={77} height={77} alt="file upload" />
-          <h3 className="mb-2 mt-2">Drag photo here</h3>
-          <p className="p-medium-12 mb-4">SVG, PNG, JPG</p>
-          <Button type="button" className="rounded-full">
-            Select from computer
-          </Button>
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-12 w-12 text-gray-400">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15m0-3-3-3m0 0-3 3m3-3V15" />
+</svg>
+
+          <h3 className="mt-2 text-sm text-gray-400">Drag photo here</h3>
+          <p className="text-xs text-gray-400">SVG, PNG, JPG</p>
+          <HoverBorderGradient containerClassName="rounded-full mt-2" as="button" className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2">
+            Select From computer
+          </HoverBorderGradient>
         </div>
       )}
     </div>
