@@ -11,101 +11,101 @@ export interface IProject {
 
 export const projects: IProject[] = [
   {
-    title: "shadverse",
+    title: "labgenius",
     description:
       "Share and discover applications built with the awesome shadcn/ui",
-    authorGithub: "https://github.com/lucky-chap",
-    projectRepo: "https://github.com/lucky-chap/shadverse",
-    projectLink: "https://shadverse.vercel.app/",
+    authorGithub: "https://github.com/Krishanx2003",
+    projectRepo: "https://github.com/Krishanx2003/labgenuis",
+    projectLink: "https://labgenius.vercel.app/",
   },
   
   {
-    title: "shadverse",
+    title: "labgenius",
     description:
       "Share and discover applications built with the awesome shadcn/ui",
-    authorGithub: "https://github.com/lucky-chap",
-    projectRepo: "https://github.com/lucky-chap/shadverse",
-    projectLink: "https://shadverse.vercel.app/",
+    authorGithub: "https://github.com/Krishanx2003",
+    projectRepo: "https://github.com/Krishanx2003/labgenuis",
+    projectLink: "https://labgenius.vercel.app/",
   },
   
   {
-    title: "shadverse",
+    title: "labgenius",
     description:
       "Share and discover applications built with the awesome shadcn/ui",
-    authorGithub: "https://github.com/lucky-chap",
-    projectRepo: "https://github.com/lucky-chap/shadverse",
-    projectLink: "https://shadverse.vercel.app/",
+    authorGithub: "https://github.com/Krishanx2003",
+    projectRepo: "https://github.com/Krishanx2003/labgenuis",
+    projectLink: "https://labgenius.vercel.app/",
   },
   
   {
-    title: "shadverse",
+    title: "labgenius",
     description:
       "Share and discover applications built with the awesome shadcn/ui",
-    authorGithub: "https://github.com/lucky-chap",
-    projectRepo: "https://github.com/lucky-chap/shadverse",
-    projectLink: "https://shadverse.vercel.app/",
+    authorGithub: "https://github.com/Krishanx2003",
+    projectRepo: "https://github.com/Krishanx2003/labgenuis",
+    projectLink: "https://labgenius.vercel.app/",
   },
   
   {
-    title: "shadverse",
+    title: "labgenius",
     description:
       "Share and discover applications built with the awesome shadcn/ui",
-    authorGithub: "https://github.com/lucky-chap",
-    projectRepo: "https://github.com/lucky-chap/shadverse",
-    projectLink: "https://shadverse.vercel.app/",
+    authorGithub: "https://github.com/Krishanx2003",
+    projectRepo: "https://github.com/Krishanx2003/labgenuis",
+    projectLink: "https://labgenius.vercel.app/",
   },
   
   {
-    title: "shadverse",
+    title: "labgenius",
     description:
       "Share and discover applications built with the awesome shadcn/ui",
-    authorGithub: "https://github.com/lucky-chap",
-    projectRepo: "https://github.com/lucky-chap/shadverse",
-    projectLink: "https://shadverse.vercel.app/",
+    authorGithub: "https://github.com/Krishanx2003",
+    projectRepo: "https://github.com/Krishanx2003/labgenuis",
+    projectLink: "https://labgenius.vercel.app/",
   },
   
   {
-    title: "shadverse",
+    title: "labgenius",
     description:
       "Share and discover applications built with the awesome shadcn/ui",
-    authorGithub: "https://github.com/lucky-chap",
-    projectRepo: "https://github.com/lucky-chap/shadverse",
-    projectLink: "https://shadverse.vercel.app/",
+    authorGithub: "https://github.com/Krishanx2003",
+    projectRepo: "https://github.com/Krishanx2003/labgenuis",
+    projectLink: "https://labgenius.vercel.app/",
   },
   
   {
-    title: "shadverse",
+    title: "labgenius",
     description:
       "Share and discover applications built with the awesome shadcn/ui",
-    authorGithub: "https://github.com/lucky-chap",
-    projectRepo: "https://github.com/lucky-chap/shadverse",
-    projectLink: "https://shadverse.vercel.app/",
+    authorGithub: "https://github.com/Krishanx2003",
+    projectRepo: "https://github.com/Krishanx2003/labgenuis",
+    projectLink: "https://labgenius.vercel.app/",
   },
   
   {
-    title: "shadverse",
+    title: "labgenius",
     description:
       "Share and discover applications built with the awesome shadcn/ui",
-    authorGithub: "https://github.com/lucky-chap",
-    projectRepo: "https://github.com/lucky-chap/shadverse",
-    projectLink: "https://shadverse.vercel.app/",
+    authorGithub: "https://github.com/Krishanx2003",
+    projectRepo: "https://github.com/Krishanx2003/labgenuis",
+    projectLink: "https://labgenius.vercel.app/",
   },
   
   {
-    title: "shadverse",
+    title: "labgenius",
     description:
       "Share and discover applications built with the awesome shadcn/ui",
-    authorGithub: "https://github.com/lucky-chap",
-    projectRepo: "https://github.com/lucky-chap/shadverse",
-    projectLink: "https://shadverse.vercel.app/",
+    authorGithub: "https://github.com/Krishanx2003",
+    projectRepo: "https://github.com/Krishanx2003/labgenuis",
+    projectLink: "https://labgenius.vercel.app/",
   },
   
   {
-    title: "shadverse",
+    title: "labgenius",
     description:
       "Share and discover applications built with the awesome shadcn/ui",
-    authorGithub: "https://github.com/lucky-chap",
-    projectRepo: "https://github.com/lucky-chap/shadverse",
-    projectLink: "https://shadverse.vercel.app/",
+    authorGithub: "https://github.com/Krishanx2003",
+    projectRepo: "https://github.com/Krishanx2003/labgenuis",
+    projectLink: "https://labgenius.vercel.app/",
   },
 ];

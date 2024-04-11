@@ -62,9 +62,8 @@ export async function deleteUser(clerkId: string) {
       // Update the 'projects' collection to remove references to the user
       Project.updateMany(
         { _id: { $in: userToDelete.projects } },
-        { $pull: { organizer: userToDelete._id } }
+        { $pull: { creator: userToDelete._id } }
       ),
-
     ])
 
     // Delete user

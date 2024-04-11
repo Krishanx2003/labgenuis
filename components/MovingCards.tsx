@@ -17,32 +17,53 @@ export function MovingCards() {
 
 const testimonials = [
   {
-    quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+    "quote": "Artificial intelligence will reach human levels by around 2029. Follow that out further to, say, 2045, we will have multiplied the intelligence, the human biological machine intelligence of our civilization a billion-fold.",
+    "name": "Ray Kurzweil",
+    "title": "Futurist"
   },
   {
-    quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
+    "quote": "Machine learning is the science of getting computers to act without being explicitly programmed.",
+    "name": "Andrew Ng",
+    "title": "Computer Scientist"
   },
   {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+    "quote": "The best minds of my generation are thinking about how to make people click ads.",
+    "name": "Jeff Hammerbacher",
+    "title": "Data Scientist"
   },
   {
-    quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+    "quote": "Data is the new oil. It’s valuable, but if unrefined it cannot really be used. It has to be changed into gas, plastic, chemicals, etc., to create a valuable entity that drives profitable activity; so must data be broken down, analyzed for it to have value.",
+    "name": "Clive Humby",
+    "title": "Data Scientist"
   },
   {
-    quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+    "quote": "The goal of AI is to enable computers to learn, reason, and perceive the way humans do.",
+    "name": "Amit Ray",
+    "title": "Author"
   },
-];
+  {
+    "quote": "Artificial intelligence would be the ultimate version of Google. The ultimate search engine that would understand everything on the web. It would understand exactly what you wanted, and it would give you the right thing. We’re nowhere near doing that now. However, we can get incrementally closer to that, and that is basically what we work on.",
+    "name": "Larry Page",
+    "title": "Co-founder of Google"
+  },
+  {
+    "quote": "Data really powers everything that we do.",
+    "name": "Jeff Weiner",
+    "title": "Executive Chairman of LinkedIn"
+  },
+  {
+    "quote": "We’re entering a new world in which data may be more important than software.",
+    "name": "Tim O'Reilly",
+    "title": "Founder of O'Reilly Media"
+  },
+  {
+    "quote": "I am so excited about the future of AI, in particular the area of machine learning. This is going to be the foundation of virtually every industry going forward.",
+    "name": "Jensen Huang",
+    "title": "CEO of NVIDIA"
+  },
+  {
+    "quote": "By far, the greatest danger of artificial intelligence is that people conclude too early that they understand it.",
+    "name": "Eliezer Yudkowsky",
+    "title": "Researcher"
+  }
+]

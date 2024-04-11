@@ -1,5 +1,7 @@
 
 import { Button } from "@/components/ui/button"
+import { ContainerScroll } from "./ui/container-scroll-animation";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -23,7 +25,7 @@ export default function Hero() {
           </Button>
           <Button className="w-full">
             <a
-              href="https://ui.shadcn.com"
+              href="https://github.com/Krishanx2003"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -32,6 +34,29 @@ export default function Hero() {
           </Button>
         </div>
       </div>
-    </section>
+     <div className="flex flex-col overflow-hidden">
+     <ContainerScroll
+       titleComponent={
+         <>
+           <h1 className="text-4xl font-semibold py-0  bg-clip-text bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+           Explore music, code, image recognition,  <br />
+             {/* <span className="text-2xl md:text-[6rem] font-bold  leading-none  bg-clip-text bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50"> */}
+              text analysis, and AI hosting.
+          
+           </h1>
+         </>
+       }
+     >
+       <Image
+         src={`/screenshot.png`}
+         alt="hero"
+         height={720}
+         width={1400}
+         className="mx-auto rounded-2xl object-cover h-full object-left-top"
+         draggable={false}
+       />
+     </ContainerScroll>
+   </div>
+   </section>
   );
 }

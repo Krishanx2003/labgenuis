@@ -71,7 +71,11 @@ export type CreateUserParams = {
     description: string
     imageUrl: string
     url: string
-  
+    creator: {
+      _id: string
+      firstName: string
+      lastName: string
+    }
     category: {
       _id: string
       name: string

@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Categories from '@/components/Categories';
-import Collab from '@/components/Collab';
+
 import Feature from '@/components/Feature';
 import Hero from '@/components/Hero';
 import BlogContent from '@/components/BlogContent';
@@ -41,7 +41,7 @@ const Home = () => {
     <main className="container relative ">
       <div className="mx-4 md:mx-[3.25rem] pt-32 lg:pt-16">
         <Hero />
-        <Collab />
+       
       </div>
       <div className="mx-auto grid max-w-[1440px] grid-flow-row-dense grid-cols-1 gap-10 py-20 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         {limitedProjects.map((project, i) => (

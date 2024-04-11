@@ -31,7 +31,8 @@ const populateProject = (query: any) => {
 export async function createProject({ project, path, userId }: CreateProjectParams) {
   try {
     await connectToDatabase()
-   
+    const creator = await User.findById(userId)
+    if (!creator) throw new Error('creator not found')
 
     const newProject = await Project.create({ ...project, category: project.categoryId })
     revalidatePath(path)
@@ -62,6 +63,10 @@ export async function getProjectById(projectId: string) {
 export async function updateProject({ userId, project, path }: UpdateProjectParams) {
   try {
     await connectToDatabase()
+    const projectToUpdate = await Project.findById(project._id)
+    if (!projectToUpdate || projectToUpdate.organizer.toHexString() !== userId) {
+      throw new Error('Unauthorized or project not found')
+    }
 
   
     const updatedProject = await Project.findByIdAndUpdate(
@@ -118,27 +123,27 @@ export async function getAllProjects({ query, limit = 6, page, category }: GetAl
   }
 }
 
-/// GET PROJECTS BY organizer
-// export async function getProjectsByUser({ userId, limit = 6, page }: GetProjectsByUserParams) {
-//   try {
-//     await connectToDatabase()
+// GET PROJECTS BY CREATOR
+export async function getProjectsByUser({ userId, limit = 6, page }: GetProjectsByUserParams) {
+  try {
+    await connectToDatabase()
 
-//     const conditions = { organizer: userId }
-//     const skipAmount = (page - 1) * limit
+    const conditions = { creator: userId }
+    const skipAmount = (page - 1) * limit
 
-//     const projectsQuery = Project.find(conditions)
-//       .sort({ createdAt: 'desc' })
-//       .skip(skipAmount)
-//       .limit(limit)
+    const projectsQuery = Project.find(conditions)
+      .sort({ createdAt: 'desc' })
+      .skip(skipAmount)
+      .limit(limit)
 
-//     const projects = await populateProject(projectsQuery)
-//     const projectsCount = await Project.countDocuments(conditions)
+    const projects = await populateProject(projectsQuery)
+    const projectsCount = await Project.countDocuments(conditions)
 
-//     return { data: JSON.parse(JSON.stringify(projects)), totalPages: Math.ceil(projectsCount / limit) }
-//   } catch (error) {
-//     handleError(error)
-//   }
-// }
+    return { data: JSON.parse(JSON.stringify(projects)), totalPages: Math.ceil(projectsCount / limit) }
+  } catch (error) {
+    handleError(error)
+  }
+}
 
 // GET RELATED projectS: projectS WITH SAME CATEGORY
 export async function getRelatedProjectsByCategory({

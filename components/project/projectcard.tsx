@@ -55,7 +55,7 @@ export default function ProjectCard({ project }: { project: IProject }) {
                 data-show-count="true"
                 aria-label="Follow user on GitHub"
               >
-                Follow author
+                Labgenius
               </GitHubButton>
             </div>
           </div>
