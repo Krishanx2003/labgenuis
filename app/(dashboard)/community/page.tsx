@@ -12,16 +12,16 @@ interface CardData {
 
 const cardData: CardData[] = [
   {
-    imageUrl: "/logo.png",
-    title: "Air Jordan 4 Retro Reimagined",
+    imageUrl: "/icons/github.png",
+    title: "Chat with Labgenius community members!",
   },
   {
-    imageUrl: "/logo.png",
-    title: "Air Jordan 4 Retro Reimagined",
+    imageUrl: "/icons/discord.png",
+    title: "Chat with Labgenius community members!",
   },
   {
-    imageUrl: "/logo.png",
-    title: "Air Jordan 4 Retro Reimagined",
+    imageUrl: "/icons/github.png",
+    title: "Chat with Labgenius community members!",
   },
   // Add more card data objects here as needed
 ];
