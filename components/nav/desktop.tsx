@@ -67,15 +67,7 @@ export function NavMenu() {
         </NavigationMenuLink>
       </Link>
     </NavigationMenuItem>
-    <NavigationMenuItem>
-      <Link href="/models" legacyBehavior passHref>
-        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-          <div className="font-normal text-foreground/70">
-            Models
-          </div>
-        </NavigationMenuLink>
-      </Link>
-    </NavigationMenuItem>
+    
     <NavigationMenuItem>
       <Link href="/about" legacyBehavior passHref>
         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
