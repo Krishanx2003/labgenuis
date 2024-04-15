@@ -1,5 +1,5 @@
 import React from "react";
-import { TracingBeam } from "../../../components/ui/tracing-beam"; // Import TracingBeam component
+import { TracingBeam } from "../../components/ui/tracing-beam"; // Import TracingBeam component
 
 import Image from "next/image";
 

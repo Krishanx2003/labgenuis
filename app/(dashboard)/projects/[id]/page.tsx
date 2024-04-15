@@ -4,7 +4,7 @@ import { getProjectById, getRelatedProjectsByCategory } from "@/lib/actions/proj
 import { SearchParamProps } from "@/types/mongodb";
 import Image from 'next/image';
 import Link from "next/link"
-import { Sidebar } from "../components/sidebar";
+import { Sidebar } from "../../../../components/project/sidebar";
 import { workflows } from "../data/workflows";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";

@@ -1,6 +1,6 @@
 'use client'
 import { createContext } from 'react'
-import { BackgroundGradient } from "../../../components/ui/background-gradient";
+import { BackgroundGradient } from "../../components/ui/background-gradient";
 import { IconAppWindow } from "@tabler/icons-react";
 import Image from "next/image";
 

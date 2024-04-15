@@ -9,7 +9,7 @@ import { SearchParamProps } from "../../../types/mongodb"
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProjectById, getRelatedProjectsByCategory } from "@/lib/actions/project.actions";
-import { Sidebar } from "./components/sidebar";
+import { Sidebar } from "../../../components/project/sidebar";
 import { workflows } from "./data/workflows";
 import { Separator } from "@/components/ui/separator";
 import { PlusCircledIcon } from "@radix-ui/react-icons"
@@ -42,9 +42,8 @@ export default async function Projects({ searchParams }: SearchParamProps) {
   return (
     <>
     <div className="border-t">
-  <div className="bg-background">
-    <div className="grid lg:grid-cols-5">
-      <Sidebar workflows={workflows} className="hidden lg:block" />
+
+   
       <div className="col-span-3 lg:col-span-4 lg:border-l">
         <div className="h-full px-4 py-6 lg:px-8">
           <Tabs defaultValue="model" className="h-full space-y-6">
@@ -122,8 +121,7 @@ export default async function Projects({ searchParams }: SearchParamProps) {
           </div>
             </div>
           </div>
-        </div>
-      </div>
+       
     </>
   );
 }
