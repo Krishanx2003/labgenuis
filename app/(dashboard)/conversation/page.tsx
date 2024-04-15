@@ -20,10 +20,11 @@ import { formSchema } from "./constants";
 import { ChatCompletionMessageParam } from "openai/resources/chat/completions"
 import ReactMarkdown from "react-markdown";
 
+// Other imports remain the same
 
 const ConversationPage = () => {
   const router = useRouter();
-  const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([]); // Fix type annotation
+  const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -41,18 +42,17 @@ const ConversationPage = () => {
         content: values.prompt,
       };
       const newMessages = [...messages, userMessage];
-      const response = await axios.post('/api/conversation', 
-      { messages: newMessages });
+      const response = await axios.post('/api/conversation', { messages: newMessages });
    
       setMessages((current) => [...current, userMessage, response.data]);
       form.reset();
     } catch (error: any) {
-    
       console.log(error);
     } finally {
       router.refresh();
     }
   };
+
   return ( 
     <div>
       <Heading
@@ -63,44 +63,42 @@ const ConversationPage = () => {
         bgColor="bg-violet-500/10"
       />
       <div className="px-4 lg:px-8">
-        <div>
-          <Form {...form}>
-            <form 
-              onSubmit={form.handleSubmit(onSubmit)} 
-              className="
-                rounded-lg 
-                border 
-                w-full 
-                p-4 
-                px-3 
-                md:px-6 
-                focus-within:shadow-sm
-                grid
-                grid-cols-12
-                gap-2
-              "
-            >
-              <FormField
-                name="prompt"
-                render={({ field }) => (
-                  <FormItem className="col-span-12 lg:col-span-10">
-                    <FormControl className="m-0 p-0">
-                      <Input
-                        className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
-                        disabled={isLoading} 
-                        placeholder="How do I calculate the radius of a circle?" 
-                        {...field}
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-              <Button className="col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon">
-                Generate
-              </Button>
-            </form>
-          </Form>
-        </div>
+        <Form {...form}>
+          <form 
+            onSubmit={form.handleSubmit(onSubmit)} 
+            className="
+              rounded-lg 
+              border 
+              w-full 
+              p-4 
+              px-3 
+              md:px-6 
+              focus-within:shadow-sm
+              grid
+              grid-cols-12
+              gap-2
+            "
+          >
+            <FormField
+              name="prompt"
+              render={({ field }) => (
+                <FormItem className="col-span-12 lg:col-span-10">
+                  <FormControl className="m-0 p-0">
+                    <Input
+                      className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
+                      disabled={isLoading} 
+                      placeholder="How do I calculate the radius of a circle?" 
+                      {...field}
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            <Button className="col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon">
+              Generate
+            </Button>
+          </form>
+        </Form>
         <div className="space-y-4 mt-4">
           {isLoading && (
             <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
@@ -108,31 +106,25 @@ const ConversationPage = () => {
             </div>
           )}
           {messages.length === 0 && !isLoading && (
-            <Empty label="No conversation started." />
+            <Empty label="No conversation started yet." />
           )}
           <div className="flex flex-col-reverse gap-y-4">
             {messages.map((message, index) => (
-        <div 
-        key={index} // Changed from message.content to index (assuming content might be repeated)
-        className={cn(
-          "p-8 w-full flex items-start gap-x-8 rounded-lg",
-          message.role === "user" ? "bg-muted" : ""
-        )}
-      >
-      
+              <div
+                key={index} 
+                className={cn(
+                  "p-8 w-full flex items-start gap-x-8 rounded-lg",
+                  message.role === "user"
+                    ? "bg-white border border-black/10"
+                    : "bg-muted"
+                )}
+              >
                 {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
-                <ReactMarkdown components={{
-                  pre: ({ node, ...props }) => (
-                    <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
-                      <pre {...props} />
-                    </div>
-                  ),
-                  code: ({ node, ...props }) => (
-                    <code className=" rounded-lg p-1" {...props} />
-                  )
-                }} className="text-sm overflow-hidden leading-7">
-                  {message.content}
-                </ReactMarkdown>
+                {/* Ensure consistent handling of message.content */}
+                {typeof message.content === 'string' && (
+  <p className="text-sm">{message.content}</p>
+)}
+
               </div>
             ))}
           </div>
@@ -141,5 +133,5 @@ const ConversationPage = () => {
     </div>
   );
 };
- 
+
 export default ConversationPage;
