@@ -49,7 +49,7 @@ export default function Hero() {
      >
        <Image
          src={`/screenshot.png`}
-         alt="hero"
+         alt="screenshot"
          height={720}
          width={1400}
          className="mx-auto rounded-2xl object-cover h-full object-left-top"
