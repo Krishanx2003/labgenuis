@@ -11,6 +11,7 @@ import { Separator } from '@/components/ui/home-separator';
 import ProjectCard from '@/components/project/projectcard';
 import { projects } from '@/data/projects';
 import { MovingCards } from '@/components/MovingCards';
+import Footer from '@/components/Footer';
 
 const revalidate = 30;
 const query = groq`*[_type == 'post']{
@@ -54,6 +55,7 @@ const Home = () => {
       <BlogContent posts={posts.slice(0, 3)} />
       <Separator my-8 />
       <MovingCards />
+      <Footer />
     </main>
   );
 };
