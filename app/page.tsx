@@ -12,6 +12,9 @@ import ProjectCard from '@/components/project/projectcard';
 import { projects } from '@/data/projects';
 import { MovingCards } from '@/components/MovingCards';
 import Footer from '@/components/Footer';
+import { ContainerScroll } from '@/components/ui/container-scroll-animation';
+import Image from 'next/image';
+
 
 const revalidate = 30;
 const query = groq`*[_type == 'post']{
@@ -42,6 +45,28 @@ const Home = () => {
     <main className="container relative ">
       <div className="mx-4 md:mx-[3.25rem] pt-32 lg:pt-16">
         <Hero />
+        <ContainerScroll
+              titleComponent={
+                <>
+                  <h1 className="text-4xl font-semibold text-black dark:text-white">
+                    <div className="bg-gradient-to-r from-primary to-secondary-foreground text-transparent bg-clip-text relative">
+                      <div className="text-7xl font-bold text-center lg:text-[180px] md:text-[120px] sm:text-[90px]">
+                        OpenMind
+                      </div>
+                    </div>
+                    {/* </span> */}
+                  </h1>
+                </>
+              }>
+              <Image
+                src={`/assets/images/preview.png`}
+                alt="hero"
+                height={720}
+                width={1400}
+                className="mx-auto rounded-2xl object-cover h-full items-center"
+                draggable={false}
+              />
+            </ContainerScroll>
        
       </div>
       <div className="mx-auto grid max-w-[1440px] grid-flow-row-dense grid-cols-1 gap-10 py-20 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">

@@ -48,7 +48,7 @@ export default function Hero() {
        }
      >
        <Image
-         src={`/screenshot.png`}
+         src="/screenshot.png"
          alt="screenshot"
          height={720}
          width={1400}

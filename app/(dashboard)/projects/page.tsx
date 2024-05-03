@@ -41,11 +41,7 @@ export default async function Projects({ searchParams }: SearchParamProps) {
 
   return (
     <>
-    <div className="border-t">
-
-   
-      <div className="col-span-3 lg:col-span-4 lg:border-l">
-        <div className="h-full px-4 py-6 lg:px-8">
+  
           <Tabs defaultValue="model" className="h-full space-y-6">
             <div className="space-between flex items-center">
               <TabsList>
@@ -118,9 +114,7 @@ export default async function Projects({ searchParams }: SearchParamProps) {
                     </TabsContent>
                   
           </Tabs>
-          </div>
-            </div>
-          </div>
+        
        
     </>
   );
