@@ -4,7 +4,7 @@ import { getProjectById, getRelatedProjectsByCategory } from "@/lib/actions/proj
 import { SearchParamProps } from "@/types/mongodb";
 import Image from 'next/image';
 import Link from "next/link"
-import { Sidebar } from "../components/sidebar";
+{/*import { Sidebar } from "../components/sidebar";*/}
 import { workflows } from "../data/workflows";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -23,7 +23,7 @@ const ProjectDetails = async ({ params: { id }, searchParams }: SearchParamProps
       <div className="border-t">
         <div className="bg-background">
           <div className="grid lg:grid-cols-5">
-            <Sidebar workflows={workflows} className="hidden lg:block" />
+              {/*   <Sidebar workflows={workflows} className="hidden lg:block" /> */}
             <div className="col-span-3 lg:col-span-4 lg:border-l">
               <div className="h-full px-4 py-6 lg:px-8">
                 <section className="wrapper my-8">
